@@ -16,9 +16,9 @@ public class Dice extends PApplet {
 
 Die daniel;
 int sum;
-int a=4;
+int a = 4;
 int j = 0;
-int i=0;
+int i = 0;
 public void setup()
 {
 	noLoop();
