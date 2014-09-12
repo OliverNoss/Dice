@@ -21,8 +21,9 @@ int j = 0;
 int i = 0;
 public void setup()
 {
-	noLoop();
 	size(1024,768);
+	noLoop();
+	background(255);
 	strokeWeight(a);
 }
 public void draw()
@@ -37,7 +38,8 @@ public void draw()
 		{
 		
 			daniel = new Die(i,j);
-			daniel.roll();
+			// daniel.roll();
+			daniel.value = (int)(Math.random()*6+1);
 			daniel.show();
 			i+=a*8;
 		}
@@ -56,8 +58,8 @@ public void mousePressed()
 }
 class Die 
 {
-	int value,dieX,dieY;
-	Die(int x, int y) //constructor
+	int dieX,dieY,value;
+	Die(int x, int y) 
 	{
 		dieX=x;
 		dieY=y;
@@ -65,7 +67,7 @@ class Die
 	}
 	public void roll()
 	{
-		value = (int)(Math.random()*6+1);
+		// value = (int)(Math.random()*6+1);
 	}
 	public void show()
 	{
@@ -74,20 +76,20 @@ class Die
 		fill(0);
 		if (value==1) {
 			point(dieX+4*a,dieY+4*a);
-			System.out.println(1);
+			// System.out.println(1);
 			sum+=value;
 		}
 		if (value==2) {
 			point(dieX+2*a,dieY+2*a);
 			point(dieX+6*a,dieY+6*a);
-			System.out.println(2);
+			// System.out.println(2);
 			sum+=value;
 		}
 		if (value==3) {
 			point(dieX+2*a,dieY+2*a);
 			point(dieX+6*a,dieY+6*a);
 			point(dieX+4*a,dieY+4*a);
-			System.out.println(3);
+			// System.out.println(3);
 			sum+=value;
 		}
 		if (value==4) {
@@ -95,7 +97,7 @@ class Die
 			point(dieX+6*a,dieY+6*a);
 			point(dieX+2*a,dieY+6*a);
 			point(dieX+6*a,dieY+2*a);
-			System.out.println(4);
+			// System.out.println(4);
 			sum+=value;
 		}
 		if (value==5) {
@@ -104,7 +106,7 @@ class Die
 			point(dieX+6*a,dieY+6*a);
 			point(dieX+2*a,dieY+6*a);
 			point(dieX+6*a,dieY+2*a);
-			System.out.println(5);
+			// System.out.println(5);
 			sum+=value;	
 		}
 		if (value==6) {
@@ -114,7 +116,7 @@ class Die
 			point(dieX+2*a,dieY+6*a);
 			point(dieX+6*a,dieY+4*a);
 			point(dieX+6*a,dieY+2*a);
-			System.out.println(6);
+			// System.out.println(6);
 			sum+=value;
 		}
 	}
